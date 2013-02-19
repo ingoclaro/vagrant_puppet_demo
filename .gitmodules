@@ -19,3 +19,6 @@
 [submodule "puppet/modules/mysql"]
 	path = puppet/modules/mysql
 	url = git://github.com/puppetlabs/puppetlabs-mysql.git
+[submodule "puppet/modules/keepalived"]
+	path = puppet/modules/keepalived
+	url = git://github.com/BenoitCattie/puppet-keepalived.git

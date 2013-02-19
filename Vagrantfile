@@ -12,11 +12,18 @@ Vagrant::Config.run do |vagrant_config|
     puppet.module_path  = 'puppet/modules'
   end
 
-  vagrant_config.vm.define :lb do |config|
-    config.vm.customize ['modifyvm', :id, '--name', 'lb', '--memory', 256]
-    config.vm.network :hostonly, '33.33.33.10'
-    config.vm.host_name = 'lb'
-    config.vm.forward_port 80, 8080 #haproxy
+  vagrant_config.vm.define :lb1 do |config|
+    config.vm.customize ['modifyvm', :id, '--name', 'lb1', '--memory', 256]
+    config.vm.network :hostonly, '33.33.33.11'
+    config.vm.host_name = 'lb1'
+    config.vm.forward_port 80, 8071 #haproxy
+  end
+
+  vagrant_config.vm.define :lb2 do |config|
+    config.vm.customize ['modifyvm', :id, '--name', 'lb2', '--memory', 256]
+    config.vm.network :hostonly, '33.33.33.12'
+    config.vm.host_name = 'lb2'
+    config.vm.forward_port 80, 8072 #haproxy
   end
 
   vagrant_config.vm.define :web1 do |config|
