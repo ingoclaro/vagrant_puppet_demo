@@ -18,33 +18,31 @@ vrrp_instance VI_1 {
         auth_pass 1111
     }
     virtual_ipaddress {
-        33.33.33.10 dev eth1
+        33.33.22.10 dev eth1
     }
 }
 
-virtual_server 33.33.33.10 80 {
+virtual_server 33.33.22.10 80 {
     delay_loop 3
     lb_algo rr
-    lb_kind NAT
+    lb_kind DR
     nat_mask 255.255.255.0
-    persistence_timeout 50
+    persistence_timeout 9600
     protocol TCP
 
-    real_server 33.33.33.11 80 {
-        weight 1
+    real_server 33.33.22.11 80 {
+        weight 50
         TCP_CHECK {
-            connect_port 80
-            bindto 33.33.33.11
-            connect_timeout 3
+          connect_timeout 3
+          connect_port    80
         }
     }
 
-    real_server 33.33.33.12 80 {
-        weight 1
+    real_server 33.33.22.12 80 {
+        weight 50
         TCP_CHECK {
-            connect_port 80
-            bindto 33.33.33.12
-            connect_timeout 3
+          connect_timeout 3
+          connect_port    80
         }
     }
 

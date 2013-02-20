@@ -14,6 +14,7 @@ Vagrant::Config.run do |vagrant_config|
 
   vagrant_config.vm.define :lb1 do |config|
     config.vm.customize ['modifyvm', :id, '--name', 'lb1', '--memory', 256]
+    config.vm.network :hostonly, '33.33.22.11'
     config.vm.network :hostonly, '33.33.33.11'
     config.vm.host_name = 'lb1'
     config.vm.forward_port 80, 8071 #haproxy
@@ -21,6 +22,7 @@ Vagrant::Config.run do |vagrant_config|
 
   vagrant_config.vm.define :lb2 do |config|
     config.vm.customize ['modifyvm', :id, '--name', 'lb2', '--memory', 256]
+    config.vm.network :hostonly, '33.33.22.12'
     config.vm.network :hostonly, '33.33.33.12'
     config.vm.host_name = 'lb2'
     config.vm.forward_port 80, 8072 #haproxy
