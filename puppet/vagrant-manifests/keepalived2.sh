@@ -1,5 +1,8 @@
 rpm -Uvh http://svn.riviera.org.uk/repo/RPMS/keepalived/RPMS/x86_64/keepalived-1.2.1-5.el5.x86_64.rpm
 
+# http://www.sebastien-han.fr/blog/2012/04/15/active-passive-failover-cluster-on-a-mysql-galera-cluster-with-haproxy-lsb-agent/
+# http://www.sebastien-han.fr/blog/2012/05/13/active-passive-failover-using-keepalived-on-a-galera-cluster-with-haproxy/
+
 /etc/keepalived/keepalived.conf:
 
 vrrp_script chk_haproxy {

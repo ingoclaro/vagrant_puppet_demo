@@ -5,34 +5,12 @@ node 'basenode' {
 }
 
 node /^lb.*/ inherits basenode {
-  class { 'haproxy': }
-
-  # class { 'keepalived::server': }
-
-  # keepalived::virtual_server{'lb_www':
-  #   state => 'MASTER',
-  #   virtual_router_id => '50',
-  #   virtual_ipaddress => '33.33.33.10',
-  #   virtual_server_port => '80',
-  #   lb_kind => 'DR',
-  # }
-
-  # keepalived::real_server{'lb1':
-  #   virtual_server_name => 'lb_www',
-  #   ip => '33.33.33.11',
-  #   port => '80',
-  #   weight => '100',
-  # }
-
-  # keepalived::real_server{'lb2':
-  #   virtual_server_name => 'lb_www',
-  #   ip => '33.33.33.12',
-  #   port => '80',
-  #   weight => '90',
-  # }
+  class { 'keepalived': }
 }
 
 node /^web.*/ inherits basenode {
+  class { 'keepalived': }
+
   class { 'apache':
     default_mods => false,
   }
