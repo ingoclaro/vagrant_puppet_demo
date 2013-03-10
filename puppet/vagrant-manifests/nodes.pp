@@ -33,6 +33,16 @@ node /^web.*/ inherits basenode {
     configure_firewall => true,
     ssl => false,
   }
+
+  class { 'corosync': }
+
+  package { "pacemaker":
+    ensure => "installed"
+  }
+
+  # enable firewall rule
+  # iptables -I INPUT -p udp -m state --state NEW -m multiport --dports 5404,5405 -j ACCEPT
+
 }
 
 node 'db' inherits basenode {

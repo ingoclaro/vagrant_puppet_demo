@@ -1,0 +1,6 @@
+name    'my_fw'
+version '0.0.1'
+author 'ingoclaro'
+license 'Apache License, Version 2.0'
+summary 'basic firewall rules'
+description 'stock firewall rules'

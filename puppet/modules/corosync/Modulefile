@@ -1,0 +1,6 @@
+name    'corosync'
+version '0.0.1'
+author 'ingoclaro'
+license 'Apache License, Version 2.0'
+summary 'corosync instalation and configuration'
+description 'installs corosync and configures it with a demo'

@@ -20,6 +20,8 @@ Vagrant::Config.run do |vagrant_config|
   end
 
   vagrant_config.vm.define :web1 do |config|
+    config.vm.box_url = 'https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box'
+    config.vm.box  = 'centos63'
     config.vm.customize ['modifyvm', :id, '--name', 'web1', '--memory', 256]
     config.vm.network :hostonly, '33.33.33.51'
     config.vm.host_name = 'web1'
@@ -27,6 +29,8 @@ Vagrant::Config.run do |vagrant_config|
   end
 
   vagrant_config.vm.define :web2 do |config|
+    config.vm.box_url = 'https://dl.dropbox.com/u/7225008/Vagrant/CentOS-6.3-x86_64-minimal.box'
+    config.vm.box  = 'centos63'
     config.vm.customize ['modifyvm', :id, '--name', 'web2', '--memory', 256]
     config.vm.network :hostonly, '33.33.33.52'
     config.vm.host_name = 'web2'
