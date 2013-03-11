@@ -1,0 +1,6 @@
+name    'pacemaker'
+version '0.0.1'
+author 'ingoclaro'
+license 'Apache License, Version 2.0'
+summary 'pacemaker instalation and configuration'
+description 'installs pacemaker and configures it with a demo'
