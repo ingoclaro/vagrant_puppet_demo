@@ -44,6 +44,7 @@ node /^web.*/ inherits basenode {
   }
 
   class { 'apache::mod::php': }
+  class { 'apache::mod::status': }
   class { 'mysql::php': }
 
   apache::mod { 'authz_host': }
@@ -55,7 +56,6 @@ node /^web.*/ inherits basenode {
   apache::mod { 'negotiation': }
   apache::mod { 'setenvif': }
   apache::mod { 'proxy': }
-  apache::mod { 'status': }
 
   apache::vhost { 'default':
     port            => '80',
