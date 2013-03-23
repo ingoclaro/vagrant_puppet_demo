@@ -1,0 +1,15 @@
+  location <%= location %> {
+<% if @location_cfg_prepend -%><% location_cfg_prepend.each do |key,value| -%>
+    <%= key %> <%= value %>;
+<% end -%><% end -%>
+    proxy_pass <%= proxy %>;
+    proxy_read_timeout <%= proxy_read_timeout %>;
+<% if @proxy_set_header -%><% proxy_set_header.each do |header| -%>
+    proxy_set_header        <%= header %>;
+<% end -%><% end -%>
+<% if @proxy_buffering -%>
+    proxy_buffering off;<% end %>
+<% if @location_cfg_append -%><% location_cfg_append.each do |key,value| -%>
+    <%= key %> <%= value %>;
+<% end -%><% end -%>
+  }

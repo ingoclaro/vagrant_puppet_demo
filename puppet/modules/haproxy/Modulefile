@@ -1,0 +1,6 @@
+name    'haproxy'
+version '0.0.1'
+author 'ingoclaro'
+license 'Apache License, Version 2.0'
+summary 'test ha proxy install and setup'
+description 'installs haproxy and configures it with a demo'
