@@ -1,8 +1,0 @@
-name 'atomic'
-version '0.0.1'
-summary 'A Puppet module that ensures atomic repo is installed'
-description "This module ensures that atomic repo is installed"
-license 'GPLv3'
-author 'Ingo Claro'
-
-
